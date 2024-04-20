@@ -6,8 +6,6 @@ export const createEmail = async (req, res) => {
 
     const { email, subject, message } = req.body;
 
-    console.log(process.env.GMAIL_APP_PASSWORD);
-
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {

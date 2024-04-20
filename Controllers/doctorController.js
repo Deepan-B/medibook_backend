@@ -39,7 +39,7 @@ export const findAllDoctor = async (req, res) => {
 
   try {
     const { query } = req.query;
-    console.log(query);
+    // console.log(query);
     let doctors;
     if (query) {
       doctors = await Doctor.find({
