@@ -44,9 +44,6 @@ export const register = async (req, res) => {
         role,
       });
     }
-    // if (role === "Doctor") {
-    //   role = "doctor"
-    // }
     if (role === "doctor") {
       user = new Doctor({
         name,
@@ -94,7 +91,7 @@ export const login = async (req, res) => {
     const isPasswordMatch = await bcrypt.compare( req.body.password, user.password);
 
     if (!isPasswordMatch) {
-      res.status(400).json({ message: "password doesn't match" });
+      return res.status(400).json({ message: "password doesn't match" });
     }
 
     const token = generateToken(user);
