@@ -8,6 +8,9 @@ export const verifyToken = async (req, res, next) => {
   // console.log(authToken);
 
   if (!authToken || !authToken.startsWith("Bearer ")) {
+
+
+
     return res
       .status(401)
       .json({ message: "there is no token in the response", success: "false" });

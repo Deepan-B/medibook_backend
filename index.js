@@ -8,7 +8,7 @@ import userRoute from "./Routes/userRoutes.js"
 import doctorRoute from "./Routes/docotrRoutes.js"
 import reviewRoute from "./Routes/reviewRoutes.js";
 import emailRoute from "./Routes/emailRoute.js"
-
+import bookingRoute from './Routes/booking.js'
 import EventEmitter from "events"
 
 dotenv.config();
@@ -50,6 +50,8 @@ app.use("/api/v1/users", userRoute);
 app.use("/api/v1/doctors", doctorRoute);
 app.use("/api/v1/reviews", reviewRoute);
 app.use("/api/v1/send-email", emailRoute);
+app.use("/api/v1/bookings", bookingRoute);
+
 
 
 app.listen(port, () => {

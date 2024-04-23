@@ -4,7 +4,6 @@ import Doctor from "../models/DoctorSchema.js";
 export const updateDoctor = async (req, res) => {
   const id = req.params.id;
 
-  // console.log(req.body);
 
   try {
     const updatedDoctor = await Doctor.findByIdAndUpdate(
@@ -39,7 +38,6 @@ export const findAllDoctor = async (req, res) => {
 
   try {
     const { query } = req.query;
-    // console.log(query);
     let doctors;
     if (query) {
       doctors = await Doctor.find({
